@@ -2,3 +2,5 @@
 //解决:https://blog.csdn.net/weixin_30674525/article/details/97129793
 //2.vue-router中使用EventBus传值需要注意到的问题
 //解决:https://blog.csdn.net/wei_smile/article/details/80502858
+//3.关于promise
+//解决:https://www.cnblogs.com/whybxy/p/7645578.html
