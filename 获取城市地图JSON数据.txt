@@ -1,0 +1,2 @@
+https://raw.githubusercontent.com/peng8/GeoMap/aacdca1e44afc12c953d51fa93bdaf4f287efce9/json/shang_hai.geo.json
+修改后面的城市名即可得到该城市地图json数据

@@ -1,0 +1,74 @@
+1. vue-cli安装  npm install -g @vue/cli
+2.vue --version 查看vue-cli版本同时也是vue的版本
+3.通过vue-create aaa  创建一个项目
+
+
+4.解决打包dist文件夹中index.html显示空白的问题
+	1) 在根目录创建vue.config.js文件(基础配置文件
+) , 和src文件夹同级
+ 	2)配置publicPath:'./' 即可解决
+
+5.添加插件的一种形式vue add 插件名
+
+6.配置生产环境的环境变量
+创建一个.env的文件该和src同级,文件中写入VUE_APP_URL = '哈哈' ,生产环境的环境变量(打包之后会用到)
+	(1):(VUE_APP_)这部分每个环境变量都要有后面的是自定义的
+	(2):在组件中获取环境变量在data中获取 
+		 data(){
+  	                      return {
+      		        url: process.env.VUE_APP_URL //获取项目的环境变量, 变量名为VUE_APP_URl
+   		      }
+ 		 }
+	(3):环境变量每次发生变化都要重启项目
+7.配置开发环境的环境变量
+创建一个.env.development的文件该和src同级,文件中写入VUE_APP_URL = '哈哈' ,开发环境的环境变量(打包之后的项目文件,就不会在使用这个环境变量了)
+	(1):(VUE_APP_)这部分每个环境变量都要有后面的是自定义的
+	(2):在组件中获取环境变量在data中获取 
+		 data(){
+  	                      return {
+      		        url: process.env.VUE_APP_URL //在组件中,获取项目的环境变量, 变量名为VUE_APP_URl
+   		      }
+ 		 }
+	(3):环境变量每次发生变化都要重启项目
+8.配置生产环境的环境变量
+创建一个.env.production的文件该和src同级,文件中写入VUE_APP_URL = '哈哈' ,生产环境的环境变量(打包之后会用到优先级大于.env中相同的环境变量)
+	(1):(VUE_APP_)这部分每个环境变量都要有后面的是自定义的
+	(2):在组件中获取环境变量在data中获取 
+		 data(){
+  	                      return {
+      		        url: process.env.VUE_APP_URL //获取项目的环境变量, 变量名为VUE_APP_URl
+   		      }
+ 		 }
+	(3):环境变量每次发生变化都要重启项目
+9解释.env和.env.development和.env.production优先级(关于优先级:三个环境变量文件中如果有相同的环境变量名,在各个模式中会优先使用哪个文件中环境变量)
+	1).env.development只会在开发环境中用到的环境变量,开发环境中.env.development的优先级最高
+	2)如果只有一个.env环境变量文件那么开发环境和生产环境都会使用这个文件中的环境变量
+	3).env.production和.env生产环境中.env.production优先级大于.env
+
+10.独立运行vue文件
+	npm install -g @vue/cli-serveice-global
+	vue serve vue文件的名字
+
+11.配置文件vue.config.js , 配置项目
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
