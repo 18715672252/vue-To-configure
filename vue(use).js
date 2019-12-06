@@ -23,7 +23,7 @@ Axios.install = (Vue)=> {
 export default Axios;
 //在main.js中
 //封装好的有拦截器的axios：this.$http
-import packedAxios from "./axios";
+import packedAxios from "./axios/axios.js";
 Vue.use(packedAxios); 
 //在组间中使用this.$http代替封装好的axios
 
