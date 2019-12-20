@@ -19,3 +19,6 @@
 //       this.appKey = new Date().getTime();
 //     }
 //   }
+//5.axios用post传输数据 , 后台接受JSON格式的数据 , 但是后台接收不到数据   来源:https://www.cnblogs.com/yiyi17/p/9409249.html
+//1.config.headers['Content-Type'] = 'application/x-www-form-urlencoded';//解决后端接受JSON格式数据  , post传输后端无法收到数据 , 需要设置的请求头的Content-Type
+//2.config.data = JSON.stringify(config.data);//解决后端接受JSON格式数据,post传输后端无法收到数据 , data需要qs序列化一下

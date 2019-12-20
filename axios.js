@@ -22,13 +22,16 @@ const Axios = axios.create({
 Axios.interceptors.request.use(
   config => {
     // 在发送请求之前做某件事
-    if (config.method === "post") {
-      // 序列化
-      // config.data = qs.stringify(config.data);
-      // config.data = JSON.stringify(config.data);
+    if (config.method === "post") {//请求方式为post时
       // 提交能直接接受json 格式,可以不用 qs 来序列化的
-    }
- 
+      // config.data = qs.stringify(config.data);
+	  //项目中遇到的问题:后端接受JSON格式数据 , 但是post传输后端无法收到数据
+      //config.headers['Content-Type'] = 'application/x-www-form-urlencoded';//解决后端接受JSON格式数据  , post传输后端无法收到数据 , 需要设置的请求头的Content-Type
+	  //config.data = JSON.stringify(config.data);//解决后端接受JSON格式数据,post传输后端无法收到数据 , data需要qs序列化一下
+    }else {
+		config.headers['Content-Type'] = 'application/json;charset=utf-8';
+	}
+	
     // 做鉴权token , 就给头部带上token
     // 跨站点,存放到 cookie 会好一点,限制也没那么多,浏览环境限制了 localstorage 的使用
     // if (localStorage.token) {
