@@ -28,7 +28,7 @@ Axios.interceptors.request.use(
 	  //项目中遇到的问题:后端接受JSON格式数据 , 但是post传输后端无法收到数据
       //config.headers['Content-Type'] = 'application/x-www-form-urlencoded';//解决后端接受JSON格式数据  , post传输后端无法收到数据 , 需要设置的请求头的Content-Type 优先级大于单个实例的headers配置
 	  //config.data = JSON.stringify(config.data);//解决后端接受JSON格式数据,post传输后端无法收到数据 , data需要qs序列化一下 优先级大于单个实例的headers配置
-    }else {
+	}else {
 		config.headers['Content-Type'] = 'application/json;charset=utf-8';
 	}
 	
