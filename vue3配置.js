@@ -2,6 +2,7 @@ module.exports = {
     publicPath:'./',//修改打包的相对路径(通用),
     devServer:{
         port:'8080',//配置开发环境的运行端口 ,
+        open:true,//默认打开浏览器
         proxy:{//配置跨域
             '/api':{
                 //拦截项目中所有以/api开头的请求

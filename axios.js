@@ -26,18 +26,18 @@ Axios.interceptors.request.use(
       // 序列化
       // config.data = qs.stringify(config.data);
       // config.data = JSON.stringify(config.data);
-      // 温馨提示,若是贵公司的提交能直接接受json 格式,可以不用 qs 来序列化的
+      // 提交能直接接受json 格式,可以不用 qs 来序列化的
     }
  
-    // 若是有做鉴权token , 就给头部带上token
-    // 若是需要跨站点,存放到 cookie 会好一点,限制也没那么多,有些浏览环境限制了 localstorage 的使用
+    // 做鉴权token , 就给头部带上token
+    // 跨站点,存放到 cookie 会好一点,限制也没那么多,浏览环境限制了 localstorage 的使用
     // if (localStorage.token) {
     //   config.headers.Authorization = localStorage.token;
     // }
     return config;
   },
   error => {
-    // error 的回调信息,看贵公司的定义
+    // error 的回调信息
     Message({
       showClose: true,
       message: error,
@@ -82,8 +82,8 @@ Axios.interceptors.response.use(
     //     path: "/login"
     //   });
     // } else {
-    //   // 若是有基础信息的情况下,判断时间戳和当前的时间,若是当前的时间大于服务器过期的时间
-    //   // 乖乖的返回去登录页重新登录
+    //   // 有基础信息的情况下,判断时间戳和当前的时间,若是当前的时间大于服务器过期的时间
+    //   // 返回去登录页重新登录
     //   let lifeTime =
     //     JSON.parse(window.localStorage.getItem("token")).lifeTime * 1000;
     //   let nowTime = new Date().getTime(); // 当前时间的时间戳
