@@ -12,7 +12,7 @@ const Axios = axios.create({
   timeout: 10000,
   responseType: "json",
   withCredentials: true, // 是否允许带cookie这些
-  headers: {
+  headers: {//优先级小于单个实例的headers配置
     //   "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
     "Content-Type": "application/json;charset=utf-8"
   }
@@ -26,8 +26,8 @@ Axios.interceptors.request.use(
       // 提交能直接接受json 格式,可以不用 qs 来序列化的
       // config.data = qs.stringify(config.data);
 	  //项目中遇到的问题:后端接受JSON格式数据 , 但是post传输后端无法收到数据
-      //config.headers['Content-Type'] = 'application/x-www-form-urlencoded';//解决后端接受JSON格式数据  , post传输后端无法收到数据 , 需要设置的请求头的Content-Type
-	  //config.data = JSON.stringify(config.data);//解决后端接受JSON格式数据,post传输后端无法收到数据 , data需要qs序列化一下
+      //config.headers['Content-Type'] = 'application/x-www-form-urlencoded';//解决后端接受JSON格式数据  , post传输后端无法收到数据 , 需要设置的请求头的Content-Type 优先级大于单个实例的headers配置
+	  //config.data = JSON.stringify(config.data);//解决后端接受JSON格式数据,post传输后端无法收到数据 , data需要qs序列化一下 优先级大于单个实例的headers配置
     }else {
 		config.headers['Content-Type'] = 'application/json;charset=utf-8';
 	}
