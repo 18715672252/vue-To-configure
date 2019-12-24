@@ -20,5 +20,10 @@
 //     }
 //   }
 //5.axios用post传输数据 , 后台接受JSON格式的数据 , 但是后台接收不到数据   来源:https://www.cnblogs.com/yiyi17/p/9409249.html
-//1.config.headers['Content-Type'] = 'application/x-www-form-urlencoded';//解决后端接受JSON格式数据  , post传输后端无法收到数据 , 需要设置的请求头的Content-Type
-//2.config.data = JSON.stringify(config.data);//解决后端接受JSON格式数据,post传输后端无法收到数据 , data需要qs序列化一下
+//5.1:config.headers['Content-Type'] = 'application/x-www-form-urlencoded';//解决后端接受JSON格式数据  , post传输后端无法收到数据 , 需要设置的请求头的Content-Type
+//5.2:config.data = JSON.stringify(config.data);//解决后端接受JSON格式数据,post传输后端无法收到数据 , data需要qs序列化一下
+//6.控制台解析preview和response数据不一致→解决JS处理后台返回的Long型数据精度丢失
+//6.1:https://blog.csdn.net/fifteen718/article/details/82259961
+//6.2:JS内置有32位整数，而number类型的安全整数是53位。如果超过53位，则精度会丢失。正如现在后台传来一个64位的Long型整数，因此超过了53位，所以后台返回的值和前台获取的值会不一样
+//6.3:找后端同学去转string
+
